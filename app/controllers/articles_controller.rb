@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    
+    @article = Article.new
   end
 
   def create
@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
     
     if @article.save
       # redirect_to article_path(@article) # Redirect show page
+      flash[:notice] = "Article was created successfully" # A flash message, there is also :alert type
       redirect_to @article # Redirect show page, more concise
     else
       render :new
