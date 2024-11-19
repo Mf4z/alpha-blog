@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     # render plain: params[:article]
     @article = Article.new(params.require(:article).permit(:title, :description)) # This is whitelisting the top level key :article, and it's containing data :title and :description
@@ -25,4 +29,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description)) # This is whitelisting the top level key :article, and it's containing data :title and :description
+      flash[:notice] = "Article was updated successfully" # A flash message, there is also :alert type
+      redirect_to @article
+    else
+      render :edit
+    end
+  end
 end
