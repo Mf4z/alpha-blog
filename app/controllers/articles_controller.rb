@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  # Doest this action before anything else
+  # Does this action before anything else
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def show
