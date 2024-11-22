@@ -82,6 +82,7 @@ GEM
     date (3.3.4)
     erubi (1.13.0)
     ffi (1.17.0)
+    ffi (1.17.0-x86_64-darwin)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
