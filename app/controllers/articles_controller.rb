@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
+  # Doest this action before anything else
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
   def show
-    @article = Article.find(params[:id])
   end
 
   def index
@@ -12,12 +14,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def create
     # render plain: params[:article]
-    @article = Article.new(params.require(:article).permit(:title, :description)) # This is whitelisting the top level key :article, and it's containing data :title and :description
+    @article = Article.new(article_params) # This is whitelisting the top level key :article, and it's containing data :title and :description
     # render plain: @article.inspect # To view entered article
     
     if @article.save
@@ -30,8 +31,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description)) # This is whitelisting the top level key :article, and it's containing data :title and :description
+    if @article.update(article_params) # This is whitelisting the top level key :article, and it's containing data :title and :description
       flash[:notice] = "Article was updated successfully" # A flash message, there is also :alert type
       redirect_to @article
     else
@@ -40,8 +40,17 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+  end
+
+  private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description)
   end
 end
