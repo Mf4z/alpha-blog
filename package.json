@@ -21,6 +21,6 @@
     "yarn": "1.22.22"
   },
   "scripts": {
-    "build": "yarn install && yarn build && webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js"
   }
 }
