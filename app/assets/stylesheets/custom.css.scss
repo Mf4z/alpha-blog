@@ -17,6 +17,16 @@
   font-weight: bold;
 }
 
+#home-container {
+  margin-top: 25px;
+}
+
+.jumbotron {
+  background-image: asset-url("jumbo.jpg");
+  background-size: cover;
+  height: 470px;
+  color: wheat;
+}
 // .navbar-brand {
 //   font-size: 3rem;
 // }
