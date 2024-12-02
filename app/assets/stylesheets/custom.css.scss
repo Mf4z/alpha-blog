@@ -1,5 +1,10 @@
 @import "bootstrap/dist/css/bootstrap";
 
+html,
+body {
+  height: 100%;
+}
+
 .navbar {
   // Arsenic color #11181C
   background-color: #11181c !important;
@@ -22,11 +27,23 @@
 }
 
 .jumbotron {
-  background-image: asset-url("jumbo.jpg");
+  background-image: asset-url("jumbo-pic.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 470px;
-  color: wheat;
+  color: #fff;
 }
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
 // .navbar-brand {
 //   font-size: 3rem;
 // }
