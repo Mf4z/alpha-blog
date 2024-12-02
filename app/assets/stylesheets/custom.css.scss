@@ -1,7 +1,20 @@
 @import "bootstrap/dist/css/bootstrap";
 
 .navbar {
-  background-color: #fdf6ea !important;
+  // Arsenic color #11181C
+  background-color: #11181c !important;
+}
+
+.nav-link {
+  color: wheat !important;
+}
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: wheat;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
 }
 
 // .navbar-brand {
