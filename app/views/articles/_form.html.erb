@@ -1,3 +1,4 @@
+<div class="container"></div>
 <% if @article.errors.any? %>
   <h3>Errors stopping the article from being saved</h3>
   <ul>
@@ -6,18 +7,24 @@
     <% end %>
   </ul>
 <% end %>
-<div class="container">
-  <%= form_with(model: @article, local: true)  do |form| %>
-    <div class="mb-3">
-      <%= form.label :title, class:"form-label"%>
-      <%= form.text_field :title, class:"form-control", id:"title", placeholder:"Article Title"%>
-    </div>
-    <div class="mb-3">
-      <%= form.label :description, class:"form-label"%>
-      <%= form.text_area :description, class:"form-control", id:"description",rows:"3", placeholder:"Article Description"%>
-    </div>
-    <div class="mb-3">
-      <%= form.submit class:"btn btn-primary"%>
-    </div>
-  <% end %>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <%= form_with(model: @article,class:"shadow p-3 mb-5 bg-body rounded", local: true)  do |form| %>
+      <div class="mb-3">
+        <%= form.label :title, class:"form-label"%>
+        <%= form.text_field :title, class:"form-control", id:"title", placeholder:"Article Title"%>
+      </div>
+      <div class="mb-3">
+        <%= form.label :description, class:"form-label"%>
+        <%= form.text_area :description, class:"form-control", id:"description",rows:"3", placeholder:"Article Description"%>
+      </div>
+      <div class="mb-3">
+        <%= form.submit class:"btn btn-primary"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to 'Return to Articles listing', articles_path, class: "btn btn-dark btn-lg" %>
+</div>
 </div>
