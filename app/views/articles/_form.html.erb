@@ -6,17 +6,18 @@
     <% end %>
   </ul>
 <% end %>
-<%= form_with(model: @article, local: true)  do |form| %>
-  Form contents
-  <p>
-    <%= form.label :title%><br/>
-    <%= form.text_field :title%>
-  </p>
-  <p>
-    <%= form.label :description%><br/>
-    <%= form.text_area :description%>
-  </p>
-  <p>
-    <%= form.submit%><br/>
-  </p>
-<% end %>
+<div class="container">
+  <%= form_with(model: @article, local: true)  do |form| %>
+    <div class="mb-3">
+      <%= form.label :title, class:"form-label"%>
+      <%= form.text_field :title, class:"form-control", id:"title", placeholder:"Article Title"%>
+    </div>
+    <div class="mb-3">
+      <%= form.label :description, class:"form-label"%>
+      <%= form.text_area :description, class:"form-control", id:"description",rows:"3", placeholder:"Article Description"%>
+    </div>
+    <div class="mb-3">
+      <%= form.submit class:"btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
