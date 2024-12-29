@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="text-center mt-4">Log in</h1>
+  <div class="container"></div>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <%= form_with(scope: :session, url: login_path,class:"shadow p-3 mb-5 bg-body rounded", local: true)  do |form| %>
+      <div class="mb-3">
+        <%= form.label :email, class:"form-label"%>
+        <%= form.email_field :email, class:"form-control", id:"email", placeholder:"Enter Your Email Address"%>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password, class:"form-label"%>
+        <%= form.password_field :password, class:"form-control", id:"password", placeholder:"Enter password"%>
+      </div>
+      <div class="mb-3">
+        <%= form.submit "Log in", class:"btn btn-primary"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to 'Return to Articles listing', articles_path, class: "btn btn-dark btn-lg" %>
+</div>
+</div>
+</div>
