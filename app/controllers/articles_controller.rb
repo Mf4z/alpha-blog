@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     
     # Assigning a new user to the article to test the association and give illusion of authentication
     # This is for testing purposes only, in a real application, the user would be assigned automatically
-    @article.user = User.first
+    @article.user = current_user
 
     if @article.save
       # redirect_to article_path(@article) # Redirect show page
