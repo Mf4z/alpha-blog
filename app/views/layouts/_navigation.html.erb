@@ -14,7 +14,9 @@
             Articles
           </a>
           <ul class="dropdown-menu">
+            <% if logged_in? %>
             <li> <%= link_to 'Create Article', new_article_path, class:"dropdown-item" %></li>
+            <% end %>
             <li> <%= link_to 'View Articles', articles_path, class:"dropdown-item" %> </li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Contribute</a></li>
