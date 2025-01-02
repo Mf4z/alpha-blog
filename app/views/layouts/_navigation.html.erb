@@ -28,10 +28,9 @@
             Profile (<%= current_user.username %>)
           </a>
             <ul class="dropdown-menu">
-              <% if logged_in? %>
               <li> <%= link_to 'View profile', user_path(current_user), class:"dropdown-item" %></li>
-              <% end %>
               <li> <%= link_to 'Edit profile', edit_user_path(current_user), class:"dropdown-item" %> </li>
+              <li> <%= link_to 'Delete profile', user_path(current_user), class:"dropdown-item text-danger", method: :delete, data: { confirm: "Are you sure?"} %> </li>
             </ul>
         </li>
           </li>
