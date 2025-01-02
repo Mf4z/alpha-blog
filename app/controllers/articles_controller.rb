@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   # Does this action before anything else
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_login, except: [:show,:index] # Ensures a user is logged in to perform other actions except show and index
+  before_action :require_same_user, only: [:edit, :update, :destroy] # Ensures a user can only edit, update or delete their own articles
   def show
   end
 
@@ -58,5 +59,13 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :description)
+  end
+
+  # This is defined in the articles controller because it's only used in the articles controller
+  def require_same_user
+    if current_user != @article.user
+      flash[:alert] = "You can only perform that action on your own article"
+      redirect_to @article
+    end
   end
 end
