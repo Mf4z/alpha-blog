@@ -63,7 +63,7 @@ class ArticlesController < ApplicationController
 
   # This is defined in the articles controller because it's only used in the articles controller
   def require_same_user
-    if current_user != @article.user
+    if current_user != @article.user && !current_user.admin?
       flash[:alert] = "You can only perform that action on your own article"
       redirect_to @article
     end
