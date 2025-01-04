@@ -82,8 +82,7 @@ GEM
     crass (1.0.6)
     date (3.3.4)
     erubi (1.13.0)
-    ffi (1.17.0-x86_64-darwin)
-    ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.15.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -171,7 +170,6 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.9.2)
     rexml (3.3.8)
-    rubygems-update (3.4.22)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -240,6 +238,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  ffi (~> 1.15.5)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
@@ -247,7 +246,6 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7)
   rails-ujs
-  rubygems-update (~> 3.4.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
