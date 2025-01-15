@@ -9,7 +9,7 @@ Alpha Blog Six is a blogging platform built using Ruby on Rails as part of the [
 - Manage blog categories, including creating and assigning categories to posts.
 - Integration tests to ensure functionality.
 - Responsive design for better user experience on various devices.
-- Deployed on [Heroku](https://www.heroku.com/).
+- Deployed on [Heroku](https://alpha-blog-six-80b723f18a92.herokuapp.com/).
 
 ## Tech Stack
 
