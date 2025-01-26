@@ -1,4 +1,13 @@
 <div class="container">
-<h1 class="text-center mt-4">Categories list</h1>
-<%= render 'category', obj: @categories%>
+<h1 class="text-center mt-4">Categories</h1>
+  <div class="flickr_pagination">
+    <%= will_paginate @categories, :container => false %>
+  </div>
+
+    <%= render 'category', obj: @categories%>
+    
+  <div class="flickr_pagination">
+    <%= will_paginate @categories, :container => false %>
+  </div>
+
 </div>
