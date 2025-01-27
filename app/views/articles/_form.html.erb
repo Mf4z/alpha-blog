@@ -12,6 +12,10 @@
         <%= form.text_area :description, class:"form-control", id:"description",rows:"3", placeholder:"Article Description"%>
       </div>
       <div class="mb-3">
+        <%= form.label :category, class:"form-label"%>
+        <%= form.collection_select :category_ids, Category.order(:name), :id, :name %>
+      </div>
+      <div class="mb-3">
         <%= form.submit class:"btn btn-primary"%>
       </div>
     <% end %>
