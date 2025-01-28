@@ -13,7 +13,8 @@
       </div>
       <div class="mb-3">
         <%= form.label :category, class:"form-label"%>
-        <%= form.collection_select :category_ids, Category.order(:name), :id, :name %>
+        <%= form.collection_select :category_ids, Category.order(:name), :id, :name, { prompt: "Please select category (Can be empty)", include_hidden: false }, 
+                        { multiple: true, class: "form-control custom-select shadow-rounded" } %>
       </div>
       <div class="mb-3">
         <%= form.submit class:"btn btn-primary"%>
