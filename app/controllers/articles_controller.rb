@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, categories: []) # This is whitelisting the top level key :article, and it's containing data :title and :description
+    params.require(:article).permit(:title, :description, category_ids: []) # This is whitelisting the top level key :article, and it's containing data :title and :description
   end
 
   # This is defined in the articles controller because it's only used in the articles controller
