@@ -22,6 +22,9 @@
           <small>Created <%= time_ago_in_words(@article.created_at)%> ago, edited <%= time_ago_in_words(@article.updated_at)%> ago </small>
         </div>
       </div>
+      <div class="text-center">
+  <%= link_to 'Return to Articles listing', articles_path, class: "btn btn-dark btn-lg" %>
+</div>
     </div>
   </div>
 </div>

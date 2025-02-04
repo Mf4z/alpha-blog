@@ -6,6 +6,11 @@
             <% if article.user %>
                 By <%= link_to article.user.username, user_path(article.user)%>
             <%end%>
+            <% if article.categories.any? %>
+             <%# # render the categories partial %>
+            <p><%= render article.categories%></p>
+          <% end %>
+                
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
